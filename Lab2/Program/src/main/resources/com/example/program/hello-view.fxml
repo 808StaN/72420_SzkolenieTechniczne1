@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.program.AppController"
+      spacing="0">
+
+    <fx:define>
+        <ToggleGroup fx:id="tg2"/>
+    </fx:define>
+
+
+    <!-- MenuBar -->
+    <MenuBar>
+        <menus>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="Exit" onAction="#onExit"/>
+                </items>
+            </Menu>
+            <Menu text="Edit">
+                <items>
+                    <MenuItem text="Item1" onAction="#onItem1"/>
+                </items>
+            </Menu>
+            <Menu text="Help">
+                <items>
+                    <MenuItem text="About" onAction="#onAbout"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+
+    <!-- Główna zawartość -->
+    <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="20.0" left="20.0" right="20.0" bottom="20.0"/>
+        </padding>
+
+        <!-- Kolumna 1: RadioButtony kolorów -->
+        <VBox spacing="20.0">
+            <RadioButton fx:id="rbNiebieski" text="Niebieski" onAction="#onKolorNiebieski"/>
+            <RadioButton fx:id="rbZielony"   text="Zielony"   onAction="#onKolorZielony"/>
+            <RadioButton fx:id="rbCzerwony"  text="Czerwony"  onAction="#onKolorCzerwony"/>
+        </VBox>
+
+        <!-- Kolumna 2: RadioButtony 1/2/3 -->
+        <VBox spacing="20.0">
+            <RadioButton fx:id="rb1" text="1" onAction="#onNumer1"/>
+            <RadioButton fx:id="rb2" text="2" onAction="#onNumer2"/>
+            <RadioButton fx:id="rb3" text="3" onAction="#onNumer3"/>
+        </VBox>
+
+        <!-- Kolumna 3: CheckBoxy -->
+        <VBox spacing="20.0">
+            <CheckBox text="CheckBox"/>
+            <CheckBox text="CheckBox"/>
+            <CheckBox text="CheckBox"/>
+        </VBox>
+    </HBox>
+
+    <!-- Label centralny -->
+    <Label fx:id="lInfo" text="Laboratorium 2" style="-fx-font-size: 18px;"
+           alignment="CENTER" maxWidth="Infinity" VBox.vgrow="NEVER">
+        <padding>
+            <Insets top="5.0" bottom="5.0"/>
+        </padding>
+    </Label>
+
+    <!-- TabPane -->
+    <TabPane VBox.vgrow="ALWAYS">
+        <!-- Tab1 -->
+        <Tab text="Tab1" closable="false">
+            <HBox spacing="20.0">
+                <padding>
+                    <Insets top="10.0" left="10.0"/>
+                </padding>
+                <VBox spacing="20.0">
+                    <RadioButton fx:id="rbImg1" text="RadioButton" onAction="#showImage1"/>
+                    <RadioButton fx:id="rbImg2" text="RadioButton" onAction="#showImage2"/>
+                    <RadioButton fx:id="rbImg3" text="RadioButton" onAction="#showImage3"/>
+                </VBox>
+                <ImageView fx:id="imageView" fitWidth="200" fitHeight="150" preserveRatio="true"/>
+            </HBox>
+        </Tab>
+        <!-- Tab2 -->
+        <Tab text="Tab2" closable="false">
+            <VBox spacing="20.0">
+                <padding>
+                    <Insets top="10.0" left="10.0"/>
+                </padding>
+                <RadioButton fx:id="rbT1_1" text="RadioButton" toggleGroup="$tg2"/>
+                <RadioButton fx:id="rbT1_2" text="RadioButton" toggleGroup="$tg2"/>
+                <RadioButton fx:id="rbT1_3" text="RadioButton" toggleGroup="$tg2"/>
+            </VBox>
+        </Tab>
+    </TabPane>
+
+</VBox>
