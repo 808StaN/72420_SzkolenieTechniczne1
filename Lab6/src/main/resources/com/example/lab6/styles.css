@@ -1,0 +1,57 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom, #f7f9fc, #e6edf7);
+    -fx-padding: 18;
+    -fx-font-family: "Segoe UI";
+}
+
+/* Styl dowolnej kontrolki typu Button */
+.button {
+    -fx-cursor: hand;
+    -fx-background-radius: 10;
+    -fx-padding: 8 16 8 16;
+}
+
+/* 1) Klasa stylu dla wybranych przyciskow */
+.main-button {
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #1f6feb;
+    -fx-min-width: 120;
+}
+
+.main-button:hover {
+    -fx-background-color: #388bfd;
+}
+
+/* 1) Druga klasa stylu */
+.alt-button {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 13px;
+    -fx-font-style: italic;
+    -fx-text-fill: #16324f;
+    -fx-background-color: #cfe8ff;
+    -fx-min-width: 100;
+}
+
+/* 1b) Styl kontrolki po identyfikatorze */
+#resetButton {
+    -fx-border-color: #16324f;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.header-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0b2e59;
+}
+
+/* 2) Efekt graficzny na kontrolce z tekstem */
+.message-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #334155;
+    -fx-effect: dropshadow(gaussian, rgba(31,111,235,0.45), 10, 0.2, 1, 2);
+}
+
